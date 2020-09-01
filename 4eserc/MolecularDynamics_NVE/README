@@ -1,0 +1,18 @@
+For equilibration
+
+By running ./{i}_multirun_equ.sh (i = {s,l,g} where s is solid, l for liquid and g for gas), the value of the parameter irestart is written on input.solid/input.liquid/input.gas and, then, this file is saved under the original name input.dat. In the first line of the code multirun_equ.sh the parameter irestart is set to 0, then for the other times (6 for liquid and for gas, 8 for solid) it is set to 1. The number of blocks are set to 1 and the number of step per block is 1000. 
+
+The step for the equilibration are:
+1) for liquid and solid copy config.fcc to config.0, for gas copy config.0gas to config.0
+2) ./{i}_multirun_equ.sh (i = {s,l,g} where s is solid, l for liquid and g for gas)
+
+
+After equilibration
+
+The steps to make the code work are: 
+1) ./clean.sh
+2) open input.dat and set the parameter iblk to 100 
+3) ./MolDyn_NVE.cpp 
+
+
+To take a look at the result I created output.ipynb, then I changed the name of the outputs by adding sol/liqu/gas and I moved them in the folder "risultati".

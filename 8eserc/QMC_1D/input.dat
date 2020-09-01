@@ -1,0 +1,26 @@
+timeslices				100
+temperature				2
+imaginaryTimePropagation		8.0
+                                                                                                                 
+brownianMotionReconstructions           0
+delta_translation			2.2
+brownianBridgeReconstructions		200
+brownianBridgeAttempts			4
+                                                                                                                 
+MCSTEPS					4000
+equilibration				2000
+blocks					20
+                                                                                                                 
+histogram_bins				400
+histogram_start				-10
+histogram_end				10
+timeslices_interval_for_averages	1 29
+
+# Choose histogram_start & histogram_end large enough in order to
+# contain each sampled position
+
+#timeslices è quante volte è diviso beta (temp finita) o tau (temp 0)
+#propagazione di tempi immaginari in caso temp sia 0 (per quanto tempo immaginario proietto la funzione di prova)
+#istogramma rappresenta modulo quadro della funzione d'onda
+#il punto iniziale e finale (in timeslices_interval_for_averages) in caso di una catena aperta che considero sufficientemente proiettata sul stato fond così che io possa calcolarmi a temp 0 le medie dell'osservabili già contenuto nel codice
+#per T = 5 e meno 2.2 e 200

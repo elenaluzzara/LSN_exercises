@@ -1,0 +1,18 @@
+0
+0
+1.25
+0.75
+0
+0
+0
+0
+
+
+ReadInput >> state; (0 for ground state, 1 for excited state)
+ReadInput >> tipo_matr; (0 for uniform, 1 for gaussian) 
+ReadInput >> delta; (1.25 for ground state, 3 for excited state)
+ReadInput >> sigma; (0.75 for ground state, 1.85 for excited state)
+ReadInput >> x_0; (0 for both states)
+ReadInput >> y_0; (0 for both states)
+ReadInput >> z_0; (0 for ground state, 4 for excited state)
+ReadInput >> equil; (1 if equilibration is needed)

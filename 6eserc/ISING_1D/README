@@ -1,0 +1,25 @@
+-- CHANGES WITH RESPECT TO THE ORIGINAL FOLDER --
+
+For equilibration
+
+In order to make the equilibration and, then, the equilibrated simulation automatic I wrote two bash file (multirun_equ.sh e multirun.sh) and I added one more input file (input.dat2) which is equal to the original and present input.dat but without the first line associated to the temperature. This first line is added in multirun_equ.sh (with the command echo $i | cat - input.dat2 > input.dat) and the resulting file is printed in input.dat. However, the added parameter is not exactly the temperature but a number between 0 and 20. In the main I called it num. To calculate the temperature from this parameter I added a line in the main after reading num from the input.dat (the line is 'temp = 0.5 + num*(1.5/20)').  
+
+In the second line of multirun_equ.sh I run the program and print everything in config$i.equ (a different config.equ file for each temperature). Before typing ./multirun_equ.sh the last parameter (irestart) in input.dat2 has to be set to 0 so that the first configuration used for the equilibration is the one in config.0. 
+At the end, the file with names output.* and *temp* are removed. 
+
+After equilibration
+
+Before running the other bash file (multirun.sh) the same parameter (irestart) in input.dat2 has to be set to 1. In multirun.sh I take at each temperature the respective config$i.equ file and I remove the written parts and leave only the final printed configuration obtained after the equilibration. I copy this confg$i.equ file in config.final and I run the program which will take as first configuration the one written in config.final. Lastly, the bash file will run ./clean.sh removing all output.'prop'.0 file (where prop is one of the four thermodynamic propierties).
+
+
+So, to do a recap, in order to make the program work you need to: 
+
+1. set the fourth parameter (metro) in input.dat2 to 0, if you want the Gibbs sampling, or to 1, if you want the Metropolis one. 
+2. set the last parameter (irestart) in input.dat2 to 0 
+3. set nblk parameter to 1 and nstep parameter to 10000 in input.dat2
+4. run ./multirun_equ.sh 
+5. set the last parameter (irestart) in input.dat2 to 1
+6. set nblk parameter to 20 and nstep parameter to 100000
+7. run ./multirun.sh 
+
+

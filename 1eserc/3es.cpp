@@ -10,7 +10,7 @@ using namespace std;
 
 int main (int argc, char *argv[]){ 
 
-   int M = 110000;
+   int M = 200000;
    int N = 100;
    int L = M/N;
    double l = 0.8;
@@ -62,7 +62,7 @@ int main (int argc, char *argv[]){
       double angle = 0;
       x = rnd.Rannyu(-l, l);
       y = rnd.Rannyu(-l, l);
-	if((pow(x,2) + pow(y,2)) < l*l){ //metodo accept-reject per calcolare l'orientazione dell'ago
+	if((pow(x,2) + pow(y,2)) < l*l){ //metodo accept-reject per calcolare l'inclinazione dell'ago
 
 	  x_circ[i] = x*l*(1./sqrt(pow(x,2) + pow(y,2))); //coordinata x sulla circonferenza ricavata proiettando lungo il raggio il punto (x,y) estratto
 	  i++;
@@ -81,8 +81,8 @@ int main (int argc, char *argv[]){
         pigreco[i] = (2*L*l)/(count*d); 
   }
   
-  blk.SetAve(pigreco);
-  blk.BlkMethod_pigreco("pigreco_buffon.dat");
+  blk.SetAve(pigreco); //pigreco è un array con la media nei vari blocchi
+  blk.BlkMethod_pigreco("pigreco_buffon.dat"); //qui calcolo l'errore per blocco
 
  rnd.SaveSeed();
 

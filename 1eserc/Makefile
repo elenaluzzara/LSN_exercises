@@ -12,7 +12,7 @@ all: 1es_p1.exe 1es_p2.exe 1es_p3.exe
 %.o: %.cpp %.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 clean:
-	rm *.o 1es_p1.exe 1es_p2.exe 1es_p3.exe 2es.exe 3es.exe seed.out
+	rm *.o 1es.exe 2es.exe 3es.exe seed.out
 
 
 

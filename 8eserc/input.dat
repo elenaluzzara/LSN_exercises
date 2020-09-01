@@ -1,0 +1,8 @@
+0.8
+0.61
+2.5
+
+
+   ReadInput >> mu0;
+   ReadInput>> sigma0;
+   ReadInput >> delta;

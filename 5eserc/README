@@ -1,0 +1,11 @@
+In order to make the program work I added an input.dat file that allows to set eight parameters: 
+
+1) the state (0 for ground state, 1 for the excited state)
+2) the transfer matrix (0 for uniform, 1 for gaussian)
+3) the amplitude of the intervall for the uniform distribution (1.25 for 1s and 3 for 2p are the right one for the Metropolis algorithm) 
+4) the amplitude of the Gaussian distribution (0.75 for 1s and 1.85 for 2p are the right one for the Metropolis algorithm) 
+5-6-7) the initial coordinates (used only for the equilibration)
+8) equilibration (only if it is set to 1)
+
+
+The file are saved in the folder "risultati". To clean the output go to "risultati" and run ./clean.sh

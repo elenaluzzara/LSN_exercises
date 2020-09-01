@@ -10,7 +10,7 @@ using namespace std;
 
 int main (int argc, char *argv[]){ 
 
-   int M = 100000;
+   int M = 200000;
    int N = 100;
    int L = M/N; 
    double casual[M]; 
@@ -73,13 +73,13 @@ int main (int argc, char *argv[]){
         for (int i=0;i<n_int;i++) count[i]=0;
         
         for(int i=0; i<n_throws; i++){
-            	 int j=rnd.Rannyu()*n_int; //indice del subintervallo in cui finisce c
-            	 count[j]++;
+            	 int j=rnd.Rannyu()*n_int; //indice del subintervallo in cui finisce il numero casuale
+            	 count[j]++; //aggiungo il numero ai conteggi in quell'intervallo
         }
         
 	chi2 = 0;
        	for (int i=0; i<n_int; i++){
-            	  chi2+=pow(count[i]-(n_throws/n_int),2)/(n_throws/n_int);
+            	  chi2+=pow(count[i]-(n_throws/n_int),2)/(n_throws/n_int); //calcolo chi2tot
         }
 
         chi2_tot[k]=chi2;

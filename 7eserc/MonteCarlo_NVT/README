@@ -1,0 +1,20 @@
+For the first exercise I wrote two code: autocorr.cpp and blkave.cpp.
+
+For the other exercise: 
+
+For equilibration: 
+
+1) ./clean.sh if there is an output file 
+2) copy config.fcc in config.0 for solid and liquid, while for gas copy config.0gas in config.0
+3) copy input.solid/input.liquid/input.gas in input.dat
+4) set in input.dat nblk=1 e nstep=1000
+5) ./Monte_Carlo_NTV.exe
+
+This is the same procedure that I follow to make the file of the 500000 instant values of the properties (with nstep = 500000)
+
+After equilibration:
+
+1) ./clean.sh
+2) copy config.final in config.0
+3) set in input.dat nblk=30 e nstep=3000 for solid, nstep=2000 for liquid and nstep=1000 for the gas
+4) ./Monte_Carlo_NTV.exe
