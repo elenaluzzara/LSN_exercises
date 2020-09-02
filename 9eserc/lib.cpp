@@ -169,7 +169,7 @@ void Path :: Ordina (){
 }
 
 
-void Path :: Shift(int pa){  
+void Path :: Shift(int pa){ //salto di n passi per ogni m città
 
   int m = int(_rand->Rannyu(2,31)); //parto dalla numero due e scelgo m città contigue 
   int n = int(_rand->Rannyu(1,10));
@@ -200,7 +200,7 @@ void Path :: Shift(int pa){
  return;
 }
 
-void Path :: Permut (int pa){
+void Path :: Permut (int pa){ //inversione di m città con m città contigue
 
   	int m =(int)_rand->Rannyu(1.,16);
 	int value = 0;
@@ -212,22 +212,14 @@ void Path :: Permut (int pa){
  return;
 }
 
-void Path :: Inversion(int pa){
+void Path :: Inversion(int pa){ //inversione dell'ordine di m città
 
-  //int o = int(_rand->Rannyu(1,33-m)); //m =31, o=(1,2), quindi 1
-	/*int m=(int)_rand->Rannyu(2,n_city-1);
-	int value=0;
-	for(int i = 0; i < m; i++){
-	  int value = path[pa][1+i];
-	  path[pa][1+i] = path[pa][1+(m-1)-i]; //1+30
-	  path[pa][1+(m-1)-i] = value;
-	}*/
 
 	int m=(int)_rand->Rannyu(1.,n_city);
 	int value=0;
 	if(m%2==0){
 		int cont=1;	
-		for(int j=m;j>m/2;j--){
+		for(int j=m;j>m/2;j--){ //inizi dall'ultima e scambi con la numero 2 attraverso cont
 			value=path[pa][j];
 			path[pa][j]=path[pa][cont];
 			path[pa][cont]=value;
@@ -236,7 +228,7 @@ void Path :: Inversion(int pa){
 	}
 	else{
 		int cont=1;
-		for(int j=m;j>(m+1)/2;j--){
+		for(int j=m;j>(m+1)/2;j--){ //così quella in mezzo resta uguale
 			value=path[pa][j];
 			path[pa][j]=path[pa][cont];
 			path[pa][cont]=value;
