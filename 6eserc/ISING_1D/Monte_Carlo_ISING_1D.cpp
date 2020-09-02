@@ -298,7 +298,7 @@ void DatiTemp(){
   }
  OpenDati.close();
 
- if(metro==1) StampaDati.open("ene_temp_metrop.txt",ios::app);
+ if(metro==1) StampaDati.open("ene_temp_metrop.txt",ios::app); //dagli outputs mi interessa l'ultima riga 
  else StampaDati.open("ene_temp_gibbs.txt",ios::app);
   StampaDati << temp << "    " << glob_medie[19] << "    " << errori[19] << endl;
  StampaDati.close();

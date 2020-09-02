@@ -10,10 +10,9 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
-// così dovrei creare 100 array (dovrebbero bastare 100, ma si possono aumentare se non ci sono risultati soddisfacenti, dovrebbe rimanere costante il numero della popolazione poi magari ridurlo quando si sono trovati ) ognuno con 32 elementi con un certo ordine
   int which = 0;
 
-  int nstep = 100; //con temp max = 5 gli step totali sono 60000
+  int nstep = 100; 
   int nblk = 60;
   int nstep_blk = 1000; //per blk
   int indice = 0;
@@ -47,26 +46,18 @@ int main(int argc, char *argv[]){
   cin >> which;
 
   Path pop(rnd,which);
-  double temp = 20;//Lx[nstep*int(tempmax+1)];
+  double temp = 20;
 
-	for(int i=0;i<100;i++){
+	for(int i=0;i<100;i++){ //100 temperature step
 
   		for(int istep = 0; istep < nstep; istep++){ 
-			pop.Mutazione(temp);
-			pop.outL(which,temp);
-			//Lx[indice + istep] = pop.GetL();
+			pop.Mutazione(temp); //mutazione
+			pop.outL(which,temp); //scrivere best L su output
 		}
 		temp = temp*0.9;
 		nstep = nstep + 150;
 	}
 	
-
-
-	/*out.open("duecojo");
-	for(int i =0; i< 60000; i++){
- 	out << Lx[i] << endl;
-	}
-	out.close();*/
   
   pop.BestPath(which); 
 

@@ -18,3 +18,5 @@ After equilibration:
 2) copy config.final in config.0
 3) set in input.dat nblk=30 e nstep=3000 for solid, nstep=2000 for liquid and nstep=1000 for the gas
 4) ./Monte_Carlo_NTV.exe
+
+After a phase was done I changed the names of the ouputs and moved them in "risultati". 

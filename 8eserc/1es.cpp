@@ -38,6 +38,8 @@ int main (int argc, char *argv[]){
    for(int i = 0; i  < M; i ++){
    sum +=  H_integranda(x[i], mu0, sigma0);
    }
+    
+   cout << "The expectation value for the Hamiltonian is: " << sum/M << endl;
 
    int risposta;
    cout << "Do you want to print this value in a file (1 for yes, 0 for no)? "; 
@@ -47,10 +49,10 @@ int main (int argc, char *argv[]){
    minimo.open("griglia_SigmaMu.out", ios::app); 
    minimo << mu0 << setw(12) << sigma0 << setw(12) << sum/M << endl; 
    minimo.close();
+       
+   data_blocking(M, N, x, mu0, sigma0); //calcolo valori medio in blocchi con incertezza 
    }
 
-
-   data_blocking(M, N, x, mu0, sigma0); 
 
  delete[] x;
 
@@ -58,7 +60,7 @@ return 0;
 
 }
 
-/////+
+/////
 
 double * metropolis(int M, double x0, double delta, double mu, double sigma){
 

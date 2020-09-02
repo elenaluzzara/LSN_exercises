@@ -59,7 +59,6 @@ int main (int argc, char *argv[]){
    }
 
    for(int i=0; i<M;){
-      double angle = 0;
       x = rnd.Rannyu(-l, l);
       y = rnd.Rannyu(-l, l);
 	if((pow(x,2) + pow(y,2)) < l*l){ //metodo accept-reject per calcolare l'inclinazione dell'ago

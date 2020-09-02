@@ -7,9 +7,13 @@ In order to make the equilibration and, then, the equilibrated simulation automa
 In the second line of multirun_equ.sh I run the program and print everything in config$i.equ (a different config.equ file for each temperature). Before typing ./multirun_equ.sh the last parameter (irestart) in input.dat2 has to be set to 0 so that the first configuration used for the equilibration is the one in config.0. 
 At the end, the file with names output.* and *temp* are removed. 
 
+
+
 After equilibration
 
 Before running the other bash file (multirun.sh) the same parameter (irestart) in input.dat2 has to be set to 1. In multirun.sh I take at each temperature the respective config$i.equ file and I remove the written parts and leave only the final printed configuration obtained after the equilibration. I copy this confg$i.equ file in config.final and I run the program which will take as first configuration the one written in config.final. Lastly, the bash file will run ./clean.sh removing all output.'prop'.0 file (where prop is one of the four thermodynamic propierties).
+
+
 
 
 So, to do a recap, in order to make the program work you need to: 

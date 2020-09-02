@@ -1,2 +1,3 @@
 In order to do the first exercise and find the parameters sigma e mu that minimized the energy I created a input file (input.dat) where there are three changable parameters: mu, sigma and delta. The last one is the amplitude of the uniform intervall in order to make the acceptance rate of the Metropolis algorithm equal to 50% (or near it). 
-While the programm is running in the code a question appears asking if the parameters and the values of the energy need to be saved. I used this to write down the values and choose at the end which were the right ones. 
+
+While the programm is running in the code a question appears asking if the parameters and the values of the energy need to be saved. I used this to write down the values and choose at the end which were the right ones which corresponded to the minimum value of the energy.  

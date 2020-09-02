@@ -51,6 +51,7 @@ BlockingMethod :: BlockingMethod(int N,int L){
 
 BlockingMethod :: ~BlockingMethod(){}
 
+
 void BlockingMethod :: BlkMethod(double *casual){
 
    for(int i=0; i<nblk; i++){
@@ -73,7 +74,6 @@ void BlockingMethod :: BlkMethod(double *casual){
 	error_prog[i] = ErrBlk(i);
   }
 
-//cout << sum_prog[99] << "  ";
 
  return;
 }

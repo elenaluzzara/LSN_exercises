@@ -137,15 +137,6 @@ void Path :: Shift(){
 }
 
 void Path :: Permut (){
-/*
-  int o = int(_rand->Rannyu(1,16-m)); // m = 14, pesco 1
-  int u = int(_rand->Rannyu(15,33-m)); // pesco 14
-
-	for(int i = 0; i < m; i++){
-	  int value = path[tap][1+i];
-	  path[tap][1+i] = path[tap][m+1+i]; //1 con 14
-	  path[tap][(1+m)+i] = value;
-	}*/
 
   	int m =(int)_rand->Rannyu(1.,16);
 	int value = 0;
@@ -158,15 +149,6 @@ void Path :: Permut (){
 }
 
 void Path :: Inversion(){
-
-  //int o = int(_rand->Rannyu(1,33-m)); //m =31, o=(1,2), quindi 1
-	/*int m=(int)_rand->Rannyu(2,n_city-1);
-	int value=0;
-	for(int i = 0; i < m; i++){
-	  int value = path[tap][1+i];
-	  path[tap][1+i] = path[tap][1+(m-1)-i]; //1+30
-	  path[tap][1+(m-1)-i] = value;
-	}*/
 
 	int m=(int)_rand->Rannyu(1.,n_city);
 	int value=0;
@@ -250,16 +232,10 @@ void Path:: outL(int which, double temp){
 		Out.open("L_quadr.out",ios::app);
 	}
 	Out << temp << "  " << L << "  " << endl;
-	/*for(int i=0;i<n_city;i++){
-		Out<< path[i] << "  ";
-	}*/
-	//Out<< endl;
+
 	Out.close();
 	return;
 }
 
-int Path:: Pbc(int r){
-	return r - (n_city)*rint((r+1)/(n_city));
-}
 		
 

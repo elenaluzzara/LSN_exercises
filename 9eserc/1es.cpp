@@ -49,10 +49,10 @@ int main(int argc, char *argv[]){
 
   		for(int istep = 0; istep < nstep; istep++){ 
 
-			pop.Mutazione();
-			pop.NuovaPop();
-			pop.BestL(which);
-			pop.AverageL(which);
+			pop.Mutazione(); //operatori di mutazione
+			pop.NuovaPop(); //operatori di crossover e creazione di una nuova popolazione
+			pop.BestL(which); //stampa output di best L
+			pop.AverageL(which); //stampa output della media delle prime 50 best L
 		}	
 
   pop.BestPath(which); 

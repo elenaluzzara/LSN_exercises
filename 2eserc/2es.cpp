@@ -12,8 +12,6 @@ int main (int argc, char *argv[]){
 
 int nstep = 101; //step fatti dal random walk
 int M = 10000; //esprimenti totali
-int N = 100;
-int L = M/N;
 
 int a = 1; //larghezza dello step
 
@@ -61,7 +59,6 @@ Random rnd;
 
 //nstep numero di step e N numero di random walk con nstep 
 
-  BlockingMethod blk[nstep];
 
   for(int i=0; i<nstep; i++){
 	x[i] = new int[M];
@@ -135,7 +132,6 @@ Random rnd;
 
   } 
 
-
  double sum;
  double sum2;
 
@@ -154,7 +150,6 @@ Random rnd;
     error[i] = sqrt(var[i]);
   
  }
-
 
   ofstream out;
   out.open("rN2_RWdiscrete.dat");
@@ -193,6 +188,7 @@ Random rnd;
     }
 
   }
+
 
   for(int i=0; i < nstep; i++){
   sum = 0; 
